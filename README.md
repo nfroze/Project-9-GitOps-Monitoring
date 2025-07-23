@@ -25,31 +25,31 @@ Implemented a complete GitOps workflow on AWS EKS where Git commits automaticall
 ## 📸 Screenshots
 
 ### GitOps in Action
-![ArgoCD Dashboard](screenshots/1.png)
+![ArgoCD Dashboard](Screenshots/1.png)
 *ArgoCD dashboard showing both applications synced and healthy*
 
-![ArgoCD Monitoring Details](screenshots/2.png)
+![ArgoCD Monitoring Details](Screenshots/2.png)
 *Monitoring application details showing all Prometheus/Grafana components*
 
-![ArgoCD Webapp Details](screenshots/3.png)
+![ArgoCD Webapp Details](Screenshots/3.png)
 *Webapp application details showing deployed resources*
 
 ### Observability Platform
-![Grafana Cluster Dashboard](screenshots/4.png)
+![Grafana Cluster Dashboard](Screenshots/4.png)
 *Grafana cluster dashboard displaying real-time CPU and memory metrics*
 
-![Grafana Namespace Dashboard](screenshots/5.png)
+![Grafana Namespace Dashboard](Screenshots/5.png)
 *Namespace view showing webapp pods and their resource usage*
 
 ### Running Applications
-![Nginx Application](screenshots/6.png)
+![Nginx Application](Screenshots/6.png)
 *Live web application deployed via GitOps*
 
-![Monitoring Pods](screenshots/7.png)
+![Monitoring Pods](Screenshots/7.png)
 *All monitoring stack pods running successfully including Prometheus server*
 
 ### Infrastructure
-![AWS EKS Cluster](screenshots/8.png)
+![AWS EKS Cluster](Screenshots/8.png)
 *EKS cluster with nodes and node groups in AWS Console*
 
 ## 🔧 Key Implementations
