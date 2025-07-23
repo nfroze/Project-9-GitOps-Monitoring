@@ -4,7 +4,7 @@ Production-grade GitOps implementation demonstrating automated Kubernetes deploy
 
 ## 🎯 What I Built
 
-Implemented a complete GitOps workflow on AWS EKS where Git commits automatically trigger deployments through ArgoCD, with full observability via Prometheus and Grafana. This demonstrates modern DevOps practices where infrastructure and applications are managed declaratively through version control.
+Implemented a complete GitOps workflow on AWS EKS where Git commits automatically trigger deployments through ArgoCD, with full observability via Prometheus and Grafana. Successfully debugged and resolved complex Helm chart deployment issues, demonstrating real-world troubleshooting skills.
 
 ## 🛠️ Technologies Used
 
@@ -33,6 +33,7 @@ Implemented a complete GitOps workflow on AWS EKS where Git commits automaticall
    - Full cluster metrics (CPU, memory, network)
    - Application-level monitoring
    - Pre-built dashboards for instant visibility
+   - Successfully troubleshot Prometheus CRD deployment issues
 
 3. **Security & Best Practices**
    - GitOps provides complete audit trail
@@ -44,6 +45,7 @@ Implemented a complete GitOps workflow on AWS EKS where Git commits automaticall
 - Deployment time: Git push → Running pods in <2 minutes
 - Zero manual intervention required
 - Complete observability from day one
+- Successfully debugged complex CRD issues using ServerSideApply
 - Infrastructure reproducible from code
 
 ## 💡 Real-World Application
@@ -53,6 +55,7 @@ This setup mirrors production environments where:
 - Deployments need audit trails for compliance
 - Self-healing reduces operational burden
 - Monitoring prevents issues before they impact users
+- Engineers must troubleshoot complex Helm and CRD issues
 
 ---
 
