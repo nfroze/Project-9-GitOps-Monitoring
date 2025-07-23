@@ -11,19 +11,17 @@ spec:
     chart: kube-prometheus-stack
     helm:
       values: |
+        defaultRules:
+          create: true
         prometheus:
+          enabled: true
           prometheusSpec:
             retention: 2h
-            resources:
-              requests:
-                memory: 400Mi
-                cpu: 100m
+            serviceMonitorSelectorNilUsesHelmValues: false
         grafana:
           adminPassword: admin123
           service:
             type: LoadBalancer
-          persistence:
-            enabled: false
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
@@ -33,3 +31,4 @@ spec:
       selfHeal: true
     syncOptions:
     - CreateNamespace=true
+    - ServerSideApply=true
