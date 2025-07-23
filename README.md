@@ -22,6 +22,36 @@ Implemented a complete GitOps workflow on AWS EKS where Git commits automaticall
 - **Self-Healing**: ArgoCD continuously ensures cluster matches Git state
 - **Declarative Everything**: No manual kubectl commands in production
 
+## 📸 Screenshots
+
+### GitOps in Action
+![ArgoCD Dashboard](screenshots/1.png)
+*ArgoCD dashboard showing both applications synced and healthy*
+
+![ArgoCD Monitoring Details](screenshots/2.png)
+*Monitoring application details showing all Prometheus/Grafana components*
+
+![ArgoCD Webapp Details](screenshots/3.png)
+*Webapp application details showing deployed resources*
+
+### Observability Platform
+![Grafana Cluster Dashboard](screenshots/4.png)
+*Grafana cluster dashboard displaying real-time CPU and memory metrics*
+
+![Grafana Namespace Dashboard](screenshots/5.png)
+*Namespace view showing webapp pods and their resource usage*
+
+### Running Applications
+![Nginx Application](screenshots/6.png)
+*Live web application deployed via GitOps*
+
+![Monitoring Pods](screenshots/7.png)
+*All monitoring stack pods running successfully including Prometheus server*
+
+### Infrastructure
+![AWS EKS Cluster](screenshots/8.png)
+*EKS cluster with nodes and node groups in AWS Console*
+
 ## 🔧 Key Implementations
 
 1. **Automated Deployments**
@@ -56,6 +86,13 @@ This setup mirrors production environments where:
 - Self-healing reduces operational burden
 - Monitoring prevents issues before they impact users
 - Engineers must troubleshoot complex Helm and CRD issues
+
+## 🚀 Technical Challenges Overcome
+
+- Resolved Prometheus server deployment failure due to CRD size limitations
+- Implemented ServerSideApply to handle large Kubernetes resources
+- Debugged DNS resolution issues with EKS endpoint configuration
+- Fixed Terraform module defaults for public endpoint access
 
 ---
 
