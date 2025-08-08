@@ -1,4 +1,4 @@
-# 🚀 Project 9: GitOps & Monitoring
+# 🚀 Project 9: GitOps Monitoring
 
 Production-grade GitOps implementation demonstrating automated Kubernetes deployments and comprehensive observability.
 
