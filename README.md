@@ -1,99 +1,79 @@
-# 🚀 Project 9: GitOps Monitoring
+# Project 9: GitOps Monitoring
 
-Production-grade GitOps implementation demonstrating automated Kubernetes deployments and comprehensive observability.
+## Overview
 
-## 🎯 What I Built
+GitOps workflow implementation with ArgoCD on AWS EKS. Prometheus and Grafana monitoring stack deployed via Helm charts.
 
-Implemented a complete GitOps workflow on AWS EKS where Git commits automatically trigger deployments through ArgoCD, with full observability via Prometheus and Grafana. Successfully debugged and resolved complex Helm chart deployment issues, demonstrating real-world troubleshooting skills.
+## Technologies
 
-## 🛠️ Technologies Used
+- AWS EKS - Managed Kubernetes cluster in eu-west-2
+- Terraform - Infrastructure as Code
+- ArgoCD - GitOps continuous deployment
+- Prometheus - Metrics collection
+- Grafana - Visualisation dashboards
+- Helm - Package management
 
-- **AWS EKS** - Managed Kubernetes cluster in eu-west-2
-- **Terraform** - 100% Infrastructure as Code
-- **ArgoCD** - GitOps continuous deployment operator
-- **Prometheus** - Metrics collection and alerting
-- **Grafana** - Visualization and dashboards
-- **Helm** - Package management via ArgoCD
+## Architecture
 
-## 📦 Architecture
+- GitOps Pattern: Git repository monitored by ArgoCD for automatic deployments
+- Monitoring Stack: Prometheus scrapes metrics, Grafana provides dashboards
+- Self-Healing: ArgoCD ensures cluster state matches Git repository
+- Declarative Configuration: All resources defined in manifests
 
-- **GitOps Pattern**: Push code → ArgoCD detects → Automatic deployment
-- **Monitoring Stack**: Prometheus scrapes all metrics → Grafana visualizes
-- **Self-Healing**: ArgoCD continuously ensures cluster matches Git state
-- **Declarative Everything**: No manual kubectl commands in production
+## Implementation
 
-## 📸 Screenshots
+### ArgoCD Configuration
+- Monitors Git repository for changes
+- Syncs applications automatically
+- Manages both application and monitoring deployments
 
-### GitOps in Action
-![ArgoCD Dashboard](Screenshots/1.png)
-*ArgoCD dashboard showing both applications synced and healthy*
+### Monitoring Setup
+- Prometheus server collects cluster metrics
+- Grafana dashboards for visualisation
+- Pre-configured dashboards for cluster and namespace views
 
-![ArgoCD Monitoring Details](Screenshots/2.png)
-*Monitoring application details showing all Prometheus/Grafana components*
+### Troubleshooting
+- Resolved Prometheus CRD deployment issues using ServerSideApply
+- Fixed DNS resolution for EKS endpoint
+- Configured Terraform module defaults for public endpoint access
 
-![ArgoCD Webapp Details](Screenshots/3.png)
-*Webapp application details showing deployed resources*
+## Screenshots
 
-### Observability Platform
-![Grafana Cluster Dashboard](Screenshots/4.png)
-*Grafana cluster dashboard displaying real-time CPU and memory metrics*
+1. ArgoCD dashboard showing applications synced and healthy
+2. ArgoCD monitoring application details with Prometheus/Grafana components
+3. ArgoCD webapp application showing deployed resources
+4. Grafana cluster dashboard with CPU and memory metrics
+5. Grafana namespace view showing pod resource usage
+6. Deployed web application
+7. Monitoring stack pods running
+8. AWS EKS cluster in console
 
-![Grafana Namespace Dashboard](Screenshots/5.png)
-*Namespace view showing webapp pods and their resource usage*
+## Project Structure
 
-### Running Applications
-![Nginx Application](Screenshots/6.png)
-*Live web application deployed via GitOps*
+```
+Project-9-GitOps-Monitoring/
+├── terraform/
+│   └── main.tf           # EKS infrastructure
+├── manifests/
+│   ├── webapp.yaml       # Application deployment
+│   └── monitoring.yaml   # ArgoCD application for monitoring
+├── argocd/
+│   └── applications.yaml # ArgoCD application definitions
+└── screenshots/          # Documentation images
+```
 
-![Monitoring Pods](Screenshots/7.png)
-*All monitoring stack pods running successfully including Prometheus server*
+## Deployment Process
 
-### Infrastructure
-![AWS EKS Cluster](Screenshots/8.png)
-*EKS cluster with nodes and node groups in AWS Console*
+1. Terraform provisions EKS cluster
+2. ArgoCD installed on cluster
+3. ArgoCD applications configured to monitor Git repository
+4. Changes to manifests trigger automatic deployments
+5. Prometheus and Grafana deployed via Helm through ArgoCD
 
-## 🔧 Key Implementations
+## Features
 
-1. **Automated Deployments**
-   - ArgoCD monitors this Git repository
-   - Any change to `/manifests` triggers automatic sync
-   - Rollback is just a Git revert
-
-2. **Comprehensive Monitoring**
-   - Full cluster metrics (CPU, memory, network)
-   - Application-level monitoring
-   - Pre-built dashboards for instant visibility
-   - Successfully troubleshot Prometheus CRD deployment issues
-
-3. **Security & Best Practices**
-   - GitOps provides complete audit trail
-   - No direct cluster access needed
-   - All changes tracked in version control
-
-## 📊 Results
-
-- Deployment time: Git push → Running pods in <2 minutes
-- Zero manual intervention required
-- Complete observability from day one
-- Successfully debugged complex CRD issues using ServerSideApply
-- Infrastructure reproducible from code
-
-## 💡 Real-World Application
-
-This setup mirrors production environments where:
-- DevOps teams manage hundreds of microservices
-- Deployments need audit trails for compliance
-- Self-healing reduces operational burden
-- Monitoring prevents issues before they impact users
-- Engineers must troubleshoot complex Helm and CRD issues
-
-## 🚀 Technical Challenges Overcome
-
-- Resolved Prometheus server deployment failure due to CRD size limitations
-- Implemented ServerSideApply to handle large Kubernetes resources
-- Debugged DNS resolution issues with EKS endpoint configuration
-- Fixed Terraform module defaults for public endpoint access
-
----
-
-**View my other projects**: [GitHub Profile](https://github.com/nfroze)
+- Automated deployments from Git commits
+- Cluster metrics collection
+- Dashboard visualisation
+- Application health monitoring
+- Git-based rollback capability
