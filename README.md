@@ -39,14 +39,14 @@ GitOps workflow implementation with ArgoCD on AWS EKS. Prometheus and Grafana mo
 
 ## Screenshots
 
-1. ArgoCD dashboard showing applications synced and healthy
-2. ArgoCD monitoring application details with Prometheus/Grafana components
-3. ArgoCD webapp application showing deployed resources
-4. Grafana cluster dashboard with CPU and memory metrics
-5. Grafana namespace view showing pod resource usage
-6. Deployed web application
-7. Monitoring stack pods running
-8. AWS EKS cluster in console
+1. [ArgoCD dashboard showing applications synced and healthy](screenshots/1.png)
+2. [ArgoCD monitoring application details with Prometheus/Grafana components](screenshots/2.png)
+3. [ArgoCD webapp application showing deployed resources](screenshots/3.png)
+4. [Grafana cluster dashboard with CPU and memory metrics](screenshots/4.png)
+5. [Grafana namespace view showing pod resource usage](screenshots/5.png)
+6. [Deployed web application](screenshots/6.png)
+7. [Monitoring stack pods running](screenshots/7.png)
+8. [AWS EKS cluster in console](screenshots/8.png)
 
 ## Project Structure
 
