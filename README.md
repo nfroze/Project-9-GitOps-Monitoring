@@ -1,79 +1,18 @@
 # Project 9: GitOps Monitoring
 
-## Overview
-
-GitOps workflow implementation with ArgoCD on AWS EKS. Prometheus and Grafana monitoring stack deployed via Helm charts.
+GitOps workflow with ArgoCD on AWS EKS. Prometheus and Grafana deployment via Helm. Automatic synchronization from Git repository.
 
 ## Technologies
 
-- AWS EKS - Managed Kubernetes cluster in eu-west-2
-- Terraform - Infrastructure as Code
-- ArgoCD - GitOps continuous deployment
-- Prometheus - Metrics collection
-- Grafana - Visualisation dashboards
-- Helm - Package management
-
-## Architecture
-
-- GitOps Pattern: Git repository monitored by ArgoCD for automatic deployments
-- Monitoring Stack: Prometheus scrapes metrics, Grafana provides dashboards
-- Self-Healing: ArgoCD ensures cluster state matches Git repository
-- Declarative Configuration: All resources defined in manifests
-
-## Implementation
-
-### ArgoCD Configuration
-- Monitors Git repository for changes
-- Syncs applications automatically
-- Manages both application and monitoring deployments
-
-### Monitoring Setup
-- Prometheus server collects cluster metrics
-- Grafana dashboards for visualisation
-- Pre-configured dashboards for cluster and namespace views
-
-### Troubleshooting
-- Resolved Prometheus CRD deployment issues using ServerSideApply
-- Fixed DNS resolution for EKS endpoint
-- Configured Terraform module defaults for public endpoint access
+AWS EKS • Terraform • ArgoCD • Prometheus • Grafana • Helm • Kubernetes
 
 ## Screenshots
 
-1. [ArgoCD dashboard showing applications synced and healthy](screenshots/1.png)
-2. [ArgoCD monitoring application details with Prometheus/Grafana components](screenshots/2.png)
-3. [ArgoCD webapp application showing deployed resources](screenshots/3.png)
-4. [Grafana cluster dashboard with CPU and memory metrics](screenshots/4.png)
-5. [Grafana namespace view showing pod resource usage](screenshots/5.png)
-6. [Deployed web application](screenshots/6.png)
-7. [Monitoring stack pods running](screenshots/7.png)
-8. [AWS EKS cluster in console](screenshots/8.png)
-
-## Project Structure
-
-```
-Project-9-GitOps-Monitoring/
-├── terraform/
-│   └── main.tf           # EKS infrastructure
-├── manifests/
-│   ├── webapp.yaml       # Application deployment
-│   └── monitoring.yaml   # ArgoCD application for monitoring
-├── argocd/
-│   └── applications.yaml # ArgoCD application definitions
-└── screenshots/          # Documentation images
-```
-
-## Deployment Process
-
-1. Terraform provisions EKS cluster
-2. ArgoCD installed on cluster
-3. ArgoCD applications configured to monitor Git repository
-4. Changes to manifests trigger automatic deployments
-5. Prometheus and Grafana deployed via Helm through ArgoCD
-
-## Features
-
-- Automated deployments from Git commits
-- Cluster metrics collection
-- Dashboard visualisation
-- Application health monitoring
-- Git-based rollback capability
+- [ArgoCD dashboard](screenshots/1.png)
+- [ArgoCD monitoring application](screenshots/2.png)
+- [ArgoCD webapp application](screenshots/3.png)
+- [Grafana cluster dashboard](screenshots/4.png)
+- [Grafana namespace view](screenshots/5.png)
+- [Deployed application](screenshots/6.png)
+- [Monitoring pods](screenshots/7.png)
+- [AWS EKS cluster](screenshots/8.png)
